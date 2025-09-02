@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>S5B</title>
+  <style>
+    body { font-family: Tahoma, Arial; background: #121212; color: #f1f1f1; padding: 20px; }
+    header { display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 20px; }
+    h1 { margin: 0; color: #ffffff; }
+    
+    .admin-btn { 
+      background: #ff9800; 
+      color: #000; 
+      padding: 8px 15px; 
+      border: none; 
+      border-radius: 6px; 
+      cursor: pointer; 
+      font-size: 14px; 
+    }
+    .admin-btn:hover { background: #e68900; }
+
+    .question { 
+      background: #1e1e1e; 
+      color: #f1f1f1; 
+      padding: 15px; 
+      margin-bottom: 15px; 
+      border-radius: 8px; 
+      border: 1px solid #333;
+    }
+    h2 { margin: 0 0 10px; font-size: 18px; }
+    
+    textarea { 
+      width: 100%; 
+      height: 80px; 
+      border-radius: 6px; 
+      border: 1px solid #555; 
+      background: #2a2a2a; 
+      color: #fff; 
+      padding: 8px; 
+    }
+    
+    .submit-container { text-align: center; margin-top: 20px; }
+    button { 
+      background: #4caf50; 
+      color: #fff; 
+      padding: 12px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 8px; 
+      cursor: pointer; 
+    }
+    button:hover { background: #388e3c; }
+
+    #answersBox { 
+      display: none; 
+      background: #1e1e1e; 
+      color: #f1f1f1; 
+      margin-top: 30px; 
+      padding: 20px; 
+      border-radius: 8px; 
+      border: 1px solid #333;
+    }
+    #answersBox h2 { margin-top: 0; color: #fff; }
+    
+    .submission { 
+      margin-bottom: 30px; 
+      padding: 10px; 
+      border: 1px solid #444; 
+      border-radius: 6px; 
+      background: #2a2a2a;
+    }
+    .answer-item { margin-bottom: 15px; }
+    .answer-item strong { color: #ff9800; }
+    
+    .back-btn { 
+      background: #f44336; 
+      color: #fff; 
+      padding: 10px 15px; 
+      border: none; 
+      border-radius: 6px; 
+      cursor: pointer; 
+      margin-top: 20px; 
+    }
+    .back-btn:hover { background: #c62828; }
+
+    #waitingMessage { 
+      display: none; 
+      text-align: center; 
+      font-size: 18px; 
+      margin-top: 50px; 
+      color: #f1f1f1; 
+      background: #1e1e1e; 
+      padding: 20px; 
+      border-radius: 8px; 
+      border: 1px solid #333;
+    }
+    
+    #retryBtn { margin-top: 20px; background: #ff9800; color: #000; }
+    #retryBtn:hover { background: #e68900; }
+  </style>
+</head>
+<body>
+  <!-- العنوان + زر عليا -->
+  <header>
+    <h1>اختبار المرشحين لـ الأداره في سيرفر صخب</h1>
+    <button class="admin-btn" onclick="askPassword()">عليا</button>
+  </header>
+
+  <!-- الأسئلة -->
+  <div id="questionsContainer">
+    <div class="question">
+      <h2>سؤال 1: ما هو اسمك؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+    <div class="question">
+      <h2>سؤال 2: كم عمرك؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+    <div class="question">
+      <h2>سؤال 3: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+    <div class="question">
+      <h2>سؤال 4: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+    <div class="question">
+      <h2>سؤال 5: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 6: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 7: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 8: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 9: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 10: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 11: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 12: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 13: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 14: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 15: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+    
+        <div class="question">
+      <h2>سؤال 16: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 17: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 18: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 19: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 20: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 21: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 22: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 23: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 24: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+        <div class="question">
+      <h2>سؤال 25: أين تسكن؟</h2>
+      <textarea placeholder="اكتب إجابتك هنا"></textarea>
+    </div>
+
+    <!-- زر الإرسال -->
+    <div class="submit-container">
+      <button onclick="collectAnswers()">إرسال الإجابات</button>
+    </div>
+  </div>
+
+  <!-- رسالة انتظار -->
+  <div id="waitingMessage">
+    <p>✅ تم إرسال إجابتك بنجاح، الرجاء انتظار الرد من المسؤولين.</p>
+    <button id="retryBtn" onclick="retryExam()">🔄 الاختبار من جديد</button>
+  </div>
+
+  <!-- مكان عرض الإجابات -->
+  <div id="answersBox">
+    <h2>جميع إجابات المرشحين</h2>
+    <div id="answersList"></div>
+    <button class="back-btn" onclick="goBack()">عودة</button>
+  </div>
+
+  <script>
+    let allSubmissions = []; // نخزن كل النماذج هنا
+
+    function collectAnswers() {
+      const questions = document.querySelectorAll(".question h2");
+      const answers = document.querySelectorAll(".question textarea");
+      let submission = [];
+
+      questions.forEach((q, i) => {
+        submission.push({
+          question: q.innerText,
+          answer: answers[i].value || "لم تتم الإجابة"
+        });
+      });
+
+      // نضيف النموذج الجديد للمصفوفة الكبيرة
+      allSubmissions.push(submission);
+
+      // نخفي الأسئلة ونظهر رسالة الانتظار
+      document.getElementById("questionsContainer").style.display = "none";
+      document.getElementById("waitingMessage").style.display = "block";
+    }
+
+    function askPassword() {
+      const password = prompt("أدخل كلمة المرور:");
+      if (password === "00124") { // كلمة السر الجديدة
+        showAnswers();
+      } else if (password !== null) {
+        alert("❌ كلمة المرور غير صحيحة");
+      }
+    }
+
+    function retryExam() {
+      const password = prompt("أدخل كلمة المرور لإعادة الاختبار:");
+      if (password === "00124") { // كلمة السر الجديدة
+        resetExam();
+      } else if (password !== null) {
+        alert("❌ كلمة المرور غير صحيحة");
+      }
+    }
+
+    function resetExam() {
+      document.querySelectorAll(".question textarea").forEach(t => t.value = "");
+      document.getElementById("waitingMessage").style.display = "none";
+      document.getElementById("answersBox").style.display = "none";
+      document.getElementById("questionsContainer").style.display = "block";
+    }
+
+    function showAnswers() {
+      const answersList = document.getElementById("answersList");
+      answersList.innerHTML = "";
+
+      if (allSubmissions.length === 0) {
+        answersList.innerHTML = "<p>لا توجد إجابات بعد.</p>";
+      } else {
+        allSubmissions.forEach((submission, index) => {
+          const div = document.createElement("div");
+          div.className = "submission";
+          div.innerHTML = `<h3>📌 المرشح رقم ${index + 1}</h3>`;
+          submission.forEach(item => {
+            div.innerHTML += `<div class="answer-item"><strong>${item.question}</strong><br>${item.answer}</div>`;
+          });
+          answersList.appendChild(div);
+        });
+      }
+
+      document.getElementById("waitingMessage").style.display = "none";
+      document.getElementById("questionsContainer").style.display = "none";
+      document.getElementById("answersBox").style.display = "block";
+    }
+
+    function goBack() {
+      document.getElementById("answersBox").style.display = "none";
+      document.getElementById("waitingMessage").style.display = "none";
+      document.getElementById("questionsContainer").style.display = "block";
+    }
+  </script>
+</body>
+</html>
